@@ -1,0 +1,176 @@
+---
+title: "ASTHO’s Profile of State and Territorial Public Health"
+subtitle: "Overview of the Nation’s Foremost Data Source on State and Territorial Public Health Infrastructure"
+affiliations: []
+brand: "brand.yml"
+resources: 
+  - static
+  - images
+format:
+  html:
+    grid:
+      margin-width: 75px
+      sidebar-width: 235px
+    page-layout: article
+    theme: [brand, styles.scss, emoji.css]
+    embed-resources: true
+    self-contained: true
+    toc: true
+    toc-location: left
+    toc-title: Table of Contents
+    toc-depth: 3
+    number-sections: false
+    smooth-scroll: true
+    title-block-banner: 'images/profileBannerQuarto.png'
+    title-block-categories: true
+    fig-responsive: true
+    other-links:
+      - text: ASTHO website
+        href: https://www.astho.org/
+      - text: ASTHO Profile Dashboard
+        href: https://www.astho.org/profile
+      - text: Profile Data | ICPSR page
+        href: https://www.icpsr.umich.edu/web/HMCA/studies/39285/summary
+      - text: 2025 Profile Survey Instrument
+        href: /static/2025_instrument.docx
+        icon: filetype-docx
+      - text: 2022 codebook
+        href: /static/2022_codebook.xlsx
+        icon: filetype-xlsx
+      - text: 2025 codebook
+        href: /static/2025_codebook.xlsx
+        icon: filetype-xlsx
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tibble)
+library(tidyverse)
+library(dplyr)
+library(magrittr)
+library(highcharter)
+library(fontawesome)
+library(stringr)
+
+source("asthoTheme.R")
+source("accredPeerNetworkCall_slidoResults.R")
+
+
+```
+
+# About the Profile {style="text-align: center;"}
+
+------------------------------------------------------------------------
+
+## What is it? {style="text-align: center;"}
+
+::: {style="text-align: left;"}
+ASTHO’s Profile survey has gathered information on state, territorial, and freely associated state public health agencies (S/THAs) activities, structure, and resources since 2007.
+:::
+
+## How is it used? {style="text-align: center;"}
+
+::: {style="text-align: left;"}
+The Profile is the most comprehensive data source about S/THAs in the United States and has many potential applications for public health decision makers, stakeholders, and researchers.
+:::
+
+::: {.rounded-box style="text-align: left;"}
+-   Advocacy for public health needs
+-   Onboarding new public health leaders
+-   Trending public health infrastructure
+-   Needs assessments and strategic planning
+-   National and cross-jurisdiction comparisons
+:::
+
+| 
+| 
+
+# Relevant Info {style="text-align: center;"}
+
+------------------------------------------------------------------------
+
+::: {style="text-align: left;"}
+## Survey
+
+Originally fielded via qualtrics; jurisdicitons were given 2 ways to respond:
+
+-   Full survey
+-   Survey broken into individual section links
+
+## Data
+
+-   Data are being validated, cleaned, etc.
+-   Historically this has been done in SAS, but we are trying to move away from SAS generally
+-   Still finalizing the data set structure and variable naming conventions to be used moving forward
+
+## Dashboard
+
+-   Dashboard is hosted on shinyapps.io
+    -   we expect this to change given the sunsetting of shinyapps.io along with the limitations experienced with the platform
+    -   posit connect is a potenital option, but would still have limitations around custom domains
+    -   ideally would like to get the dahboard back on the main astho website, which might mean iframe embed
+        -   might be good to schedule a call with our web team at some point
+-   Viz are implemented primarily using highcharts (both via highcharter and API)
+-   We use fontawesome icons (have pro access)
+:::
+
+| 
+| 
+| 
+
+
+
+# Preliminary Profile Discovery Findings
+------------------------------------------------------------------------
+
+## Overall Impression of the Profile
+
+### From Most Negative (1) to Most Postive (5)
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+impression
+
+```
+
+## Profile Dashboard Landing Page Reactions
+
+### Wordcloud
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+word_cloud_e
+```
+
+### Sentiment Analysis
+
+::::: columns
+::: {.column width="50%"}
+#### Bing Lexicon Sentiment Analysis Bubble Chart
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+dash_sentiments
+```
+:::
+
+::: {.column width="50%"}
+#### AFINN Lexicon Sentiment Score (-5 to 5) by Theme
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+sentiment_chart_e
+```
+:::
+:::::

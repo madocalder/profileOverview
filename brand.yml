@@ -1,0 +1,144 @@
+meta:
+  name:
+    short: ASTHO
+    full: Association of State and Territorial Health Officials
+  link:
+    home: https://www.astho.org/
+    about: https://www.astho.org/about/
+    profile: https://www.astho.org/profile
+    linkedin: https://www.linkedin.com/company/association-of-state-and-territorial-health-officials/
+    facebook: https://www.facebook.com/StatePublicHealth
+  description: |
+    ASTHO is the national non-profit organization representing the public health agencies of the United States, the U.S. Territories, and the District of Columbia, as well as the 120,000 public health professionals these agencies employ. ASTHO members, the chief health officials of these jurisdictions, are dedicated to formulating and influencing sound public health policy and to assuring excellence in state-based public health practice.
+  founded: 1942
+
+logo:
+  images:
+    # ASTHO Logos - Place files in /logos directory
+    astho-white-sm:
+      path: logos/astho_white@small.png
+      alt: "ASTHO logo"
+    astho-white-md:
+      path: logos/astho_white@medium.png
+      alt: "ASTHO logo"
+    astho-white-lg:
+      path: logos/astho_white@large.png
+      alt: "ASTHO logo"
+    astho-color-sm:
+      path: logos/astho_color@small.png
+      alt: "ASTHO logo"
+    astho-color-md:
+      path: logos/astho_color@medium.png
+      alt: "ASTHO logo"
+    astho-color-lg:
+      path: logos/astho_color@large.png
+      alt: "ASTHO logo"
+
+    # Profile Logos - Place files in /logos directory
+    profile-white-sm:
+      path: logos/profile_white@small.png
+      alt: "Profile of State and Territorial Health Logo"
+    profile-white-md:
+      path: logos/profile_white@medium.png
+      alt: "Profile of State and Territorial Health Logo"
+    profile-white-lg:
+      path: logos/profile_white@large.png
+      alt: "Profile of State and Territorial Health Logo"
+    profile-color-sm:
+      path: logos/profile_color@small.png
+      alt: "Profile of State and Territorial Health Logo"
+    profile-color-md:
+      path: logos/profile_color@medium.png
+      alt: "Profile of State and Territorial Health Logo"
+    profile-color-lg:
+      path: logos/profile_color@large.png
+      alt: "Profile of State and Territorial Health Logo"
+    profile-color-gif:
+      path: logos/profile.gif
+      alt: "Profile of State and Territorial Health Logo gif"
+
+  # Primary logo configuration
+  small:
+    light: astho-color-sm  # Color logo for light backgrounds
+    dark: astho-white-sm   # White logo for dark backgrounds
+  medium:
+    light: astho-color-md
+    dark: astho-white-md
+  large:
+    light: astho-color-lg
+    dark: astho-white-lg
+
+color:
+  palette:
+    # Primary colors
+    navy: "#005182"
+    orange: "#C65227"
+
+    # Secondary colors
+    light-blue: "#70C4E8"
+    green: "#47BA83"
+    yellow: "#EBB41F"
+
+    # Tertiary colors
+    medium-blue: "#4679AE"
+    dark-orange: "#90361F"
+    light-yellow: "#FFD780"
+    palest-blue: "#cae6f2"
+
+    # Neutrals
+    white: "#FFFFFF"
+    black: "#000000"
+    off-white: "#fcfbfa"
+    light-grey: "#E6E1E7"
+    darkest-grey: "#242c3d"
+
+  # Semantic colors
+  foreground: black           # Primary text color
+  background: white           # Primary background
+  primary: navy               # Main brand color
+  secondary: orange           # Secondary brand color
+  tertiary: light-blue        # Tertiary brand color
+  success: green              # Positive actions
+  info: medium-blue           # Informational elements
+  warning: yellow             # Warning states
+  danger: dark-orange         # Error/danger states
+  light: palest-blue          # Light accents
+  dark: darkest-grey          # Dark accents
+
+typography:
+  fonts:
+    # Headings font - Sunflower
+    - family: Sunflower
+      source: google
+      weight: [300, 500, 700]  # Light, Medium, Bold
+
+    # Body font - Jost
+    - family: Jost
+      source: google
+      weight: [400]  # Book weight
+
+    # Monospace font - Atkinson Hyperlegible Mono
+    - family: Atkinson Hyperlegible Mono
+      source: google
+      weight: [400]
+
+  base:
+    family: Jost
+    weight: 400
+    size: 16px
+    line-height: 1.5
+
+  monospace:
+    family: Atkinson Hyperlegible Mono
+    weight: 400
+    size: 16px
+
+  headings:
+    family: Sunflower
+    weight: 700
+    line-height: 1.2
+    color: orange
+
+  link:
+    color: navy
+    decoration: underline

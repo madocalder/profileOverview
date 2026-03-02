@@ -1,0 +1,25 @@
+/*-- scss:rules --*/
+@charset "UTF-8";
+/*
+Name:          emojicss.css
+Written by:    CharacterCodes.net
+Version:       1.0
+*/
+
+
+.eh { font-family: monospace,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Segoe UI Symbol","Android Emoji",EmojiSymbols,"EmojiOne Mozilla";font-style: normal;color: #000; }
+
+.eh-x15{font-size:1.5rem}
+.eh-x16{font-size:1.6rem}
+.eh-x2{font-size:2rem}
+.eh-x25{font-size:2.5rem}
+.eh-x3{font-size:3rem}
+
+.eh-building-construction:before { content: '🏗️'; }
+.eh-1st-place-medal:before { content: '🥇'; }
+.eh-diving-mask:before { content: '🤿'; }
+.eh-handshake-tone3-tone5:before { content: '🫱🏽‍🫲🏿'; }
+.eh-video-game:before { content: '🎮'; }
+.eh-rocket:before { content: '🚀'; }
+
+
