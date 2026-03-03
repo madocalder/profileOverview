@@ -42,24 +42,6 @@ format:
         icon: filetype-xlsx
 ---
 
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-library(tibble)
-library(tidyverse)
-library(dplyr)
-library(magrittr)
-library(highcharter)
-library(fontawesome)
-library(stringr)
-
-source("asthoTheme.R")
-
-
-
-```
 
 # About the Profile {style="text-align: center;"}
 
