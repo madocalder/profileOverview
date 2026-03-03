@@ -1,0 +1,12 @@
+name: overview
+title: overview
+username: astho
+account: astho
+server: connect.posit.cloud
+hostUrl: https://api.connect.posit.cloud/v1
+appId: 019cb42c-2c6c-30ea-5066-f2bb1d4c2cb6
+bundleId:
+url: https://connect.posit.cloud/astho/content/019cb42c-2c6c-30ea-5066-f2bb1d4c2cb6
+version: 1
+asMultiple: FALSE
+asStatic: TRUE
