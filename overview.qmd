@@ -56,7 +56,7 @@ library(fontawesome)
 library(stringr)
 
 source("asthoTheme.R")
-source("accredPeerNetworkCall_slidoResults.R")
+
 
 
 ```
@@ -123,28 +123,3 @@ Originally fielded via qualtrics; jurisdicitons were given 2 ways to respond:
 
 
 
-# Preliminary Profile Discovery Findings
-------------------------------------------------------------------------
-
-## Overall Impression of the Profile
-
-### From Most Negative (1) to Most Postive (5)
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-impression
-
-```
-
-## Profile Dashboard Landing Page Reactions
-
-### Wordcloud
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-word_cloud_e
-```
