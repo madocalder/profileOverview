@@ -1,95 +1,72 @@
-/* ========== FIXED PROPORTION TITLE BANNER ========== */
-#title-block-header {
-  position: relative;
-  min-height: 275px;
-  overflow: hidden;
+/*-- scss:defaults --*/
 
-  // Maintain minimum heights for different screens
-  @media (min-width: 768px) { min-height: 275px; }
-  @media (min-width: 1200px) { min-height: 345px; }
+// Import fonts from Google
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Sunflower:wght@300;500;700&family=Atkinson+Hyperlegible+Mono&display=swap');
 
-  // FIXED: Added missing closing brace for this media query
-  @media (max-width: 768px) {
-    .quarto-title-banner {
-      background: $navy !important;
-      background-image: none !important;
-      color: $white !important;
-    }
-  } // <-- Added this closing brace
+// ========== COLOR VARIABLES ==========
+$navy: #005182;
+$orange: #C65227;
+$light-blue: #70C4E8;
+$green: #47BA83;
+$yellow: #EBB41F;
+$medium-blue: #4679AE;
+$dark-orange: #90361F;
+$light-yellow: #FFD780;
+$palest-blue: #cae6f2;
+$white: #FFFFFF;
+$black: #000000;
+$off-white: #fcfbfa;
+$light-grey: #E6E1E7;
+$darkest-grey: #242c3d;
 
-  /* Banner image */
-  .title-block-banner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 1;
-  }
+// Semantic colors (can also go in defaults)
+$body-bg: $white;
+$body-color: $black;
+$link-color: $navy;
+$presentation-heading-color: $navy;
+$code-block-bg: $palest-blue;
+$code-block-border-color: $palest-blue;
+$tabset-border-color: $darkest-grey;
 
-  /* Bottom protection gradient - moved outside .title-block-banner */
-  .title-block-banner-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
-    z-index: 2;
-    pointer-events: none; // Allows clicks to pass through
-  }
+// ========== TYPOGRAPHY VARIABLES ==========
+$font-family-sans-serif: "Jost", sans-serif;
+$font-family-monospace: "Atkinson Hyperlegible Mono", monospace;
+$presentation-title-slide-text-align: "left";
 
-  /* SAFE AREA GRID CONTAINER - FIXED PROPORTIONS */
-  .title-text-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    display: grid;
-    grid-template-columns: 25% minmax(0, 1fr) 33%;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
 
-    .title-content {
-      grid-column: 2;
-      padding: 2rem 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      height: 100%;
-      box-sizing: border-box;
-      overflow: hidden;
-    }
-  }
+// ========== HEADING VARIABLES ==========
+$presentation-heading-font: "Sunflower", sans-serif;
+$presentation-h4-font: $font-family-sans-serif;
+$presentation-h5-font: $font-family-sans-serif;
+$presentation-h6-font: $font-family-sans-serif;
 
-  /* ... rest of your styles ... */
+$h1-color: $orange;
+$h2-color: $navy;
+$h3-color: $navy;
+$h4-color: $navy;
+$h5-color: $navy;
+$h6-color: $navy;
 
-  // FIXED: Properly closed media query
-  @media (max-width: 768px) {
-    .title-content {
-      overflow-y: auto;
-      padding-top: 1.5rem;
-      margin-left: 10vw;
-      scrollbar-width: none;
+$h1-weight: $font-weight-bold;
+$h2-weight: $font-weight-medium;
+$h3-weight: $font-weight-light;
 
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
+/*-- scss:rules --*/
 
-    h1.title {
-      font-size: calc(1.5rem + 1vw) !important;
-      color: $white !important;
-      margin-top: 2rem !important;
-    }
+// ========== HEADING STYLES ==========
+h1 {
+  font-family: $presentation-heading-font;
+  font-weight: $h1-weight;
+  color: $h1-color;
+  border-bottom: 2px !important;
+  border-bottom-color: $light-blue;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-top: .25rem !important;
+}
 
-    .subtitle {
-      color: $white !important;
-      font-weight: $font-weight-light;
-    }
-  } // <-- Added this closing brace
-
-  // ... other styles ...
-} // <-- Make sure this closes #title-block-header
+// ... rest of your CSS rules (everything after your original comments) ...
