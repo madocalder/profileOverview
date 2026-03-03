@@ -148,29 +148,3 @@ impression
 #| warning: false
 word_cloud_e
 ```
-
-### Sentiment Analysis
-
-::::: columns
-::: {.column width="50%"}
-#### Bing Lexicon Sentiment Analysis Bubble Chart
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-dash_sentiments
-```
-:::
-
-::: {.column width="50%"}
-#### AFINN Lexicon Sentiment Score (-5 to 5) by Theme
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-sentiment_chart_e
-```
-:::
-:::::
