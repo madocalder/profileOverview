@@ -259,7 +259,7 @@
 # # Get sentiment scores
 # sentiments_d <- long_data_d %>%
 #   unnest_tokens(word, phrase, token = "words") %>%
-#   inner_join(get_sentiments("afinn"), by = "word") %>%
+#   inner_join(afinn, by = "word") %>%
 #   group_by(response_id, theme) %>%
 #   reframe(sentiment = mean(value), word = word)
 #
@@ -303,12 +303,12 @@
 #
 #
 # sentiments_d <- tidy_data_d %>%
-#   inner_join(get_sentiments("bing")) %>%  # Join with sentiment lexicon
+#   inner_join(bing) %>%  # Join with sentiment lexicon
 #   count(sentiment, word, sort = TRUE)
 #
 # # sentiment_scores <- responses_d %>%
 # #   unnest_tokens(word, `Poll Option`) %>%
-# #   inner_join(get_sentiments("afinn")) %>%
+# #   inner_join(afinn) %>%
 # #   group_by(sentiment) %>%
 # #   summarise(sentiment = mean(value))
 #
@@ -377,7 +377,7 @@
 # # Get sentiment scores
 # sentiments_d <- long_data_d %>%
 #   unnest_tokens(word, phrase, token = "words") %>%
-#   inner_join(get_sentiments("afinn"), by = "word") %>%
+#   inner_join(afinn, by = "word") %>%
 #   group_by(response_id, theme) %>%
 #   reframe(sentiment = mean(value), word = word)
 #
@@ -438,7 +438,7 @@
 # # Get sentiment scores
 # sentiments_e <- long_data_e %>%
 #   unnest_tokens(word, phrase, token = "words") %>%
-#   inner_join(get_sentiments("afinn"), by = "word") %>%
+#   inner_join(afinn, by = "word") %>%
 #   group_by(response_id, theme) %>%
 #   reframe(sentiment = mean(value), word = word)
 #
@@ -484,7 +484,7 @@
 #
 # sentiments_e <- tidy_data_e %>%
 #
-#   inner_join(get_sentiments("bing")) %>%  # Join with sentiment lexicon
+#   inner_join(bing) %>%  # Join with sentiment lexicon
 #   mutate(word = case_when(word == "overwhelming" ~ "not overwhelming",
 #                           TRUE ~ word),
 #          sentiment = case_when(word == "not overwhelming" ~ "positive",
@@ -496,7 +496,7 @@
 #
 # # sentiment_scores <- responses_d %>%
 # #   unnest_tokens(word, `Poll Option`) %>%
-# #   inner_join(get_sentiments("afinn")) %>%
+# #   inner_join(afinn) %>%
 # #   group_by(sentiment) %>%
 # #   summarise(sentiment = mean(value))
 #
@@ -565,7 +565,7 @@
 # # Get sentiment scores
 # sentiments_e <- long_data_e %>%
 #   unnest_tokens(word, phrase, token = "words") %>%
-#   inner_join(get_sentiments("afinn"), by = "word") %>%
+#   inner_join(afinn, by = "word") %>%
 #   group_by(response_id, theme) %>%
 #   reframe(sentiment = mean(value), word = word)
 #
@@ -633,6 +633,11 @@ library(ggplot2)
 library(widyr)
 library(janitor)  # Added for clean_names()
 library(textdata) # Added for sentiment lexicons
+
+
+afinn <- readRDS("~/Documents/Profile/2025/overview/afinn.rds")
+bing <- readRDS("~/Documents/Profile/2025/overview/bing.rds")
+
 
 # Load data
 slidoResults <- read_excel("slidoResults.xlsx",
@@ -843,7 +848,7 @@ theme_data <- read_excel("themes.xlsx") %>%
     # Sentiment Analysis
     sentiments_d <- long_data_d %>%
       unnest_tokens(word, phrase) %>%
-      inner_join(get_sentiments("afinn")) %>%
+      inner_join() %>%
       group_by(response_id, theme) %>%
       summarize(sentiment = mean(value), .groups = "drop")
 
@@ -882,7 +887,7 @@ theme_data <- read_excel("themes.xlsx") %>%
       filter(!str_detect(word, "\\d+"))
 
     sentiments_d <- tidy_data_d %>%
-      inner_join(get_sentiments("bing")) %>%
+      inner_join(bing) %>%
       count(sentiment, word, sort = TRUE)
 
     blueprint_sentiments <- hchart(
@@ -952,7 +957,7 @@ theme_data <- read_excel("themes.xlsx") %>%
     # Sentiment Analysis
     sentiments_e <- long_data_e %>%
       unnest_tokens(word, phrase) %>%
-      inner_join(get_sentiments("afinn")) %>%
+      inner_join(afinn) %>%
       group_by(response_id, theme) %>%
       summarize(sentiment = mean(value), .groups = "drop")
 
@@ -988,7 +993,7 @@ theme_data <- read_excel("themes.xlsx") %>%
       filter(!str_detect(word, "\\d+"))
 
     sentiments_e <- tidy_data_e %>%
-      inner_join(get_sentiments("bing")) %>%
+      inner_join(bing) %>%
       mutate(
         word = ifelse(word == "overwhelming", "not overwhelming", word),
         sentiment = ifelse(word == "not overwhelming", "positive", sentiment),
